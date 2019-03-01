@@ -243,9 +243,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll
   jekyll-feed
-  jekyll-theme-architect
   tzinfo-data
 
 BUNDLED WITH
