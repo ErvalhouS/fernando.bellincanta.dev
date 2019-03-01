@@ -42,3 +42,4 @@ plugins:
 #   - vendor/ruby/
 google_analytics: UA-135450724-1
 show_downloads: false
+show_excerpts: true
