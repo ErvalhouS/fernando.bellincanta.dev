@@ -1,0 +1,17 @@
+ul {
+  list-style-type: none;
+}
+.post-meta {
+  font-size: x-small;
+}
+.excerpt p {
+  margin-bottom: 0;
+}
+.post-list li {
+  padding-bottom: 15px;
+}
+#read_time {
+  display: block;
+  color: #9ddcff;
+  font-size: small;
+}

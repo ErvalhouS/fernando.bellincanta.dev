@@ -16,11 +16,10 @@
 title: Fernando Bellincanta
 email: fernando@bellincanta.dev
 description: >- # this means to ignore newlines until "baseurl:"
-  A computer network specialist that became a developer. Developing himself into perfection,
-  always finding creative ways to be a better person, professionally, personally and spiritually.
+  A computer network specialist that became a developer. Always finding creative ways to be a better person professionally, personally and spiritually.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://fernando.bellincanta.dev" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: ervalhous
+twitter_username: ErvalhouS
 github_username:  ErvalhouS
 
 # Build settings
@@ -28,6 +27,9 @@ markdown: kramdown
 theme: jekyll-theme-architect
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-time-to-read
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

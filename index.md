@@ -4,25 +4,25 @@
 
 layout: default
 ---
+<link rel="stylesheet" type="text/css" href="{{ '/assets/custom.css' | relative_url }}">
 <div class="home">
-  {%- if page.title -%}
-  <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
   {%- if site.posts.size > 0 -%}
-  <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+  <h2 class="post-list-heading">Posts</h2>
   <ul class="post-list">
     {%- for post in site.posts -%}
     <li>
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
         </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
+        <div class="excerpt">
+          {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
+          {%- endif -%}
+        </div>
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
     </li>
     {%- endfor -%}
   </ul>
