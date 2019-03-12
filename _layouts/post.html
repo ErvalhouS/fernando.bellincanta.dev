@@ -6,6 +6,7 @@ layout: default
   <div class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
+      {% include read_time.html %}
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
@@ -15,7 +16,6 @@ layout: default
         <span class="p-author h-card" itemprop="name">{{ page.author | escape }}</span>
       </span>
       {%- endif -%}
-      {% include read_time.html %}
     </p>
   </div>
 
