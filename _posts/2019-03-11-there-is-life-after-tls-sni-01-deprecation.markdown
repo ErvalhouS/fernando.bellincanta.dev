@@ -11,7 +11,7 @@ I've been a **certbot** user since ever and never realized that the default meth
 
 **ALPN** is a next generation protocol of negotiating TLS handshakes. It makes less roundtrips on the certificate negotiation phase, and connection can be handled earlier by reverse proxies.
 
-Certbot wasn't going to cut it, so I rolled up my sleeves and began reading - until I found [an article talking about dehydrated](https://medium.com/@decrocksam/deploying-lets-encrypt-certificates-using-tls-alpn-01-https-18b9b1e05edf). I just had to run a python script that responded the ALPN challenges correctly and badabim-badabum certificates were issued. It is nothing like just running certbot, but I was adopting one of the most secure and fast validation method.
+Certbot wasn't going to cut it, so I rolled up my sleeves and began reading - until I found [an article talking about dehydrated](https://medium.com/@decrocksam/deploying-lets-encrypt-certificates-using-tls-alpn-01-https-18b9b1e05edf). I just had to run a python script that responded the ALPN challenges correctly and badabim-badabum certificates were issued. It is nothing like just running certbot, but I was adopting one of the most secure and fast validation methods.
 
 Basically what [Sam Decrock](https://medium.com/@decrocksam) says is that I have to stop my NGINX and start the ALPN challenges script - **every time** I needed to renew a certificate. This is a **bad idea** in a production environment, so I had to adapt those instructions into a more reliable solution.
 
@@ -40,7 +40,7 @@ This way [I can keep the default setup on dehydrated python script](https://gith
 $ sudo /path/to/dehydrated_script.py
 ```
 
-Then after that I had to **change all SSL server blocks** to listen to that non-default port and *voilà*, no need to stop or restart nothing:
+Then after that I had to **change all SSL server blocks** to listen to that non-default port and *voilà*, no need to stop or restart anything:
 
 ```nginx
 # /etc/nginx/sites-available/yourdomain.com
@@ -96,6 +96,6 @@ $ sudo service alpn-script stop
 If by any chance you have to renew certificates with dehydrated and your ALPN script is not running all challenges will fail.
 
 ## Known Caveat
-There is something you have to keep in mind: Since your server is redirecting traffic to itself, the NGINX variable `$binary_remote_addr` will always be your own IP. So you if there is any configuration depending on it(like rate limiting or upstreams) [you should use another method to do it](https://ypereirareis.github.io/blog/2017/02/15/nginx-real-ip-behind-nginx-reverse-proxy/).
+There is something you have to keep in mind: Since your server is redirecting traffic to itself, the NGINX variable `$binary_remote_addr` will always be your own IP. So you if there is any configuration depending on it (like rate limiting or upstreams) [you should use another method to do it](https://ypereirareis.github.io/blog/2017/02/15/nginx-real-ip-behind-nginx-reverse-proxy/).
 
 What do you think about the solution, do you have any doubts, comments or you can help me make a better tutorial? Reach out on the comments below, I'll be glad to discuss it with you.
