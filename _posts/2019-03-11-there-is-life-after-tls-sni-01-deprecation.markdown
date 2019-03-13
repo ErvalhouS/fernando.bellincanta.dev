@@ -1,12 +1,11 @@
 ---
 layout: post
 title:  "There is life after TLS-SNI-01 deprecation"
+description: "Some people have gone crazy when Let's Encrypt announced the deprecation of the TLS-SNI-01 domain validation method. This post is about my reaction to the news."
 date:   2019-03-11 08:39:58 -0300
 categories: Tutorials
 permalink: /:categories/:title
 ---
-Some people have gone crazy when Let's Encrypt announced the deprecation of the TLS-SNI-01 domain validation method. This post is about my reaction to this news.
-
 I've been a **certbot** user since ever and never realized that the default method for SSL-only domain validation [was going to reach it's EOL](https://community.letsencrypt.org/t/march-13-2019-end-of-life-for-all-tls-sni-01-validation-support/74209). Because there wasn't a viable way of using HTTP-01 or DNS-01 challenges, a decision was made to adopt the newly implemented TLS-ALPN-01 method.
 
 **ALPN** is a next generation protocol of negotiating TLS handshakes. It makes less roundtrips on the certificate negotiation phase, and connection can be handled earlier by reverse proxies.
