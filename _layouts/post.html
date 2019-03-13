@@ -1,10 +1,8 @@
 ---
 layout: default
 ---
-<link rel="stylesheet" type="text/css" href="{{ '/assets/custom.css' | relative_url }}">
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
       {% include read_time.html %}
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
@@ -23,18 +21,25 @@ layout: default
     {{ content }}
   </div>
 
-  <div id="disqus_thread"></div>
+  <div class="disqus-placeholder">Loading comments...</div>
+  <div id="disqus_thread" class="disqus"></div>
+  <script src="{{ 'assets/js/disqusloader.js' | relative_url }}"></script>
   <script>
-    var disqus_config = function () {
-      this.page.url = document.location.href;
-      this.page.identifier = document.location.pathname;
-    };
-    (function () { // DON'T EDIT BELOW THIS LINE
-      var d = document, s = d.createElement('script');
-      s.src = 'https://fernando-bellincanta-dev.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
+    disqusLoader('.disqus',
+      {
+        scriptUrl: 'https://fernando-bellincanta-dev.disqus.com/embed.js',
+        disqusConfig: function () {
+          this.page.url = document.location.href;
+          this.page.identifier = document.location.pathname;
+          this.callbacks.onReady = [function () {
+            var el = document.querySelector('.disqus-placeholder');
+            if (el.classList)
+              el.classList.add('is-hidden'); // IE 10+
+            else
+              el.className += ' ' + 'is-hidden'; // IE 8-9
+          }];
+        }
+      });
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
       Disqus.</a></noscript>
