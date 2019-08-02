@@ -53,6 +53,6 @@ Enforcing quotas and throttling will allow you to:
  1. Monetize your API through quotas. Users that use large scale applications to consume your resources can cause your servers bills to go through the roof. It doesn't mean you'll always charge your consumers, but it's certainly a possibility;
  2. Practise restraint over how many resources you will dedicate to your API. Throttling avoids abuses and protects your application from a possible DoS attack, even unintentional ones *(yes, it happens)*.
 
-Having a usable API modernizes your relationship with your clients. While the concepts listed here are a great starting pointing to guide API development, your team should always try to be as agile as possible when bringing your product live. The amount of energy and time spent to build a mediocre product is the same you'd spend building a good one. Cutting corners can lead to extra effort in the future.
+Having an usable API modernizes your relationship with your clients. While the concepts listed here are a great starting pointing to guide API development, your team should always try to be as agile as possible when bringing your product live. The amount of energy and time spent to build a mediocre product is the same you'd spend building a good one. Cutting corners can lead to extra effort in the future.
 
 Do you have some experiences about API design you'd like to share? Let's discuss it in the comments below! I'd be happy to contribute or to know more about what you're doing :)
