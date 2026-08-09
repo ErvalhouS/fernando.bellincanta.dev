@@ -4,8 +4,6 @@ group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-seo-tag"
   gem "jekyll-sitemap"
-  gem "jekyll-time-to-read"
-  gem "jekyll-admin"
   gem "github-pages"
 end
 
