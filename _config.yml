@@ -13,13 +13,18 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Fernando Bellincanta
+title: Bellincanta Observability
 email: fernando@bellincanta.dev
+author: Fernando Bellincanta
 description: >- # this means to ignore newlines until "baseurl:"
-  A computer network specialist that became a developer. Always finding creative ways to be a better person professionally, personally and spiritually.
+  Observability and alerting at carrier scale. Voice platforms, SLOs, and the degradations that never reach a dashboard.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://fernando.bellincanta.dev" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ErvalhouS
+twitter:
+  username: ErvalhouS
+  card: summary_large_image
+logo: /assets/logo.png
 github_username:  ErvalhouS
 
 # Build settings
@@ -41,7 +46,6 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-google_analytics: UA-135450724-1
 show_downloads: false
 show_excerpts: true
 social:
@@ -50,3 +54,11 @@ social:
     - https://www.linkedin.com/in/fernandobellincanta
     - https://github.com/ErvalhouS
 buttondown_username: ErvalhouS
+audit_form_url: https://tally.so/r/0Q4aOy
+
+# Default share card for every page; jekyll-seo-tag reads `image` per page, not site-wide.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/og.png

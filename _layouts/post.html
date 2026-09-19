@@ -21,28 +21,27 @@ layout: default
     {{ content }}
   </div>
 
-  <div class="disqus-placeholder">Loading comments...</div>
-  <div id="disqus_thread" class="disqus"></div>
-  <script src="{{ 'assets/js/disqusloader.js' | relative_url }}"></script>
-  <script>
-    disqusLoader('.disqus',
-      {
-        scriptUrl: 'https://fernando-bellincanta-dev.disqus.com/embed.js',
-        disqusConfig: function () {
-          this.page.url = document.location.href;
-          this.page.identifier = document.location.pathname;
-          this.callbacks.onReady = [function () {
-            var el = document.querySelector('.disqus-placeholder');
-            if (el.classList)
-              el.classList.add('is-hidden'); // IE 10+
-            else
-              el.className += ' ' + 'is-hidden'; // IE 8-9
-          }];
-        }
-      });
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-      Disqus.</a></noscript>
+  <nav class="post-nav" aria-label="More posts">
+    {%- if page.previous -%}
+    <a class="post-nav-prev" href="{{ page.previous.url | relative_url }}">
+      <span class="post-nav-label">&larr; Previous</span>
+      {{ page.previous.title | escape }}
+    </a>
+    {%- endif -%}
+    {%- if page.next -%}
+    <a class="post-nav-next" href="{{ page.next.url | relative_url }}">
+      <span class="post-nav-label">Next &rarr;</span>
+      {{ page.next.title | escape }}
+    </a>
+    {%- endif -%}
+  </nav>
+
+  {% include newsletter.html id="post" tag="post-page" %}
+
+  <p class="post-cta">
+    Alerts green and you don't trust them?
+    <a href="{{ '/audit/' | relative_url }}">I'll look at them for free.</a>
+  </p>
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
