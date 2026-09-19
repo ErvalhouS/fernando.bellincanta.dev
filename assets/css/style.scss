@@ -46,3 +46,64 @@ h1.post-title {
     color: #777;
     padding: 1.25rem 0;
 }
+
+// --- funnel: audit landing + newsletter ---
+.header-nav .btn { margin: 0 0.25rem 0.5rem; }
+
+.audit ul, .audit ol {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+.audit ol { list-style-type: decimal; }
+
+.lede { font-size: 1.15rem; }
+
+.cta-hero {
+  margin-bottom: 2rem;
+  padding: 1.25rem 1.5rem;
+  background-color: #f6f8fa;
+  border-left: 4px solid $header-bg-color;
+  h2 { margin-top: 0; }
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: $header-bg-color;
+  border-color: $header-bg-color;
+  &:hover { color: #fff; background-color: darken($header-bg-color, 8%); }
+}
+
+.newsletter {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  background-color: #f6f8fa;
+  border: 1px solid $border-color;
+  border-radius: 0.3rem;
+  h3 { margin-top: 0; }
+}
+.newsletter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  input[type="email"] {
+    flex: 1 1 16rem;
+    padding: 0.55rem 0.7rem;
+    font-size: 1rem;
+    border: 1px solid #c8ccd0;
+    border-radius: 0.3rem;
+  }
+  .btn-primary { margin-bottom: 0; cursor: pointer; }
+}
+.newsletter-label {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.newsletter-fineprint {
+  margin: 0.6rem 0 0;
+  font-size: small;
+  color: $blockquote-text-color;
+}

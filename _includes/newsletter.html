@@ -1,0 +1,38 @@
+<!--
+  Buttondown signup form.
+
+  PLACEHOLDER (the only one that matters): set `buttondown_username` in
+  _config.yml to your Buttondown handle — the value in
+  https://buttondown.com/<handle>.
+  While that key is absent, this block renders nothing, so the build and the
+  pages stay clean until you're ready.
+
+  NO API KEY GOES IN THIS FILE. Buttondown's embed endpoint is public and
+  unauthenticated by design. API keys are only for the REST API
+  (https://api.buttondown.com/v1/subscribers), which must never be called from
+  a static page — the key would ship to every visitor's browser.
+-->
+{%- if site.buttondown_username -%}
+<div class="newsletter" id="newsletter">
+  <h3>{{ include.heading | default: "Get this in your inbox" }}</h3>
+  <p>{{ include.blurb | default: "Short letters on observability, alerting and SLOs: what actually deserves to page a human, and what only looks like it does. Written from things I've taken apart myself." }}</p>
+  <form
+    class="newsletter-form embeddable-buttondown-form"
+    action="https://buttondown.com/api/emails/embed-subscribe/{{ site.buttondown_username }}"
+    method="post"
+    target="popupwindow"
+    onsubmit="window.open('https://buttondown.com/{{ site.buttondown_username }}', 'popupwindow')">
+    <label class="newsletter-label" for="bd-email-{{ include.id | default: 'main' }}">Your email</label>
+    <input
+      type="email"
+      name="email"
+      id="bd-email-{{ include.id | default: 'main' }}"
+      placeholder="you@company.com"
+      autocomplete="email"
+      required />
+    <input type="hidden" name="tag" value="{{ include.tag | default: 'site' }}" />
+    <input type="submit" class="btn btn-primary" value="Subscribe" />
+  </form>
+  <p class="newsletter-fineprint">One click to unsubscribe. Your address is never sold or shared.</p>
+</div>
+{%- endif -%}
