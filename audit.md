@@ -13,8 +13,11 @@ permalink: /audit/
   Intake goes to the Tally form in `audit_form_url` (_config.yml), which
   redirects to /audit/thanks/ on submit. The mailto below it is the fallback
   for anyone who would rather not touch a form.
+  ?source= populates a hidden field named `source` in Tally, so every lead
+  arrives knowing which button it came from. Top vs bottom tells you whether
+  the page copy is doing any work.
 -->
-<p><a class="btn btn-primary" href="{{ site.audit_form_url }}">Get your free alert audit</a></p>
+<p><a class="btn btn-primary" href="{{ site.audit_form_url }}?source=audit-top">Get your free alert audit</a></p>
 <p class="cta-alt">or <a href="mailto:{{ site.email }}?subject=Free%20alert%20audit">email me directly</a> if you would rather not fill in a form.</p>
 
 ## What I need from you
@@ -51,7 +54,7 @@ Usually the audit surfaces two problems: one I can describe in a paragraph, and 
 
 No pressure either way. If the free analysis is all you wanted, it's yours, and you owe me nothing.
 
-<p><a class="btn btn-primary" href="{{ site.audit_form_url }}">Send me your stack</a></p>
+<p><a class="btn btn-primary" href="{{ site.audit_form_url }}?source=audit-bottom">Send me your stack</a></p>
 <p class="cta-alt">or <a href="mailto:{{ site.email }}?subject=Free%20alert%20audit">email me directly</a> if you would rather not fill in a form.</p>
 
 {% include newsletter.html id="audit" tag="audit-page" heading="Not ready for an audit?" blurb="Take the writing instead. Short letters on observability, alerting and SLOs, the same material the audit comes out of." %}

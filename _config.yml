@@ -56,6 +56,10 @@ social:
 buttondown_username: ErvalhouS
 audit_form_url: https://tally.so/r/0Q4aOy
 
+# Cloudflare Web Analytics: free, unlimited, no cookies, so no consent banner.
+# Paste the site token here to switch it on; while empty, no script is emitted.
+cloudflare_analytics_token:
+
 # Default share card for every page; jekyll-seo-tag reads `image` per page, not site-wide.
 defaults:
   - scope:
