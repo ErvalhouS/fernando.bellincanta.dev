@@ -177,6 +177,23 @@ h1.post-title {
     pre, code { background-color: #161b22; color: #b3c2cd; }
     pre { border: 1px solid #21262d; }
 
+    // rouge-github ships light-only token colors
+    .highlight {
+      background-color: #161b22;
+      color: #c9d1d9;
+      .c, .c1, .cm, .cs, .cp { color: #8b949e; }
+      .k, .kd, .kn, .kr, .kt, .kc, .kp, .ow, .o { color: #ff7b72; }
+      .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss { color: #a5d6ff; }
+      .m, .mi, .mf, .mh, .mo, .il { color: #79c0ff; }
+      .nt { color: #7ee787; }
+      .na, .nb, .bp, .nv, .vi, .vg, .vc { color: #79c0ff; }
+      .nf, .fm, .nc, .nn, .ne { color: #d2a8ff; }
+      .n, .nx, .p, .w { color: #c9d1d9; }
+      .err { color: #ffa198; background-color: transparent; }
+      .gd { color: #ffa198; background-color: #490202; }
+      .gi { color: #7ee787; background-color: #04260f; }
+    }
+
     table td, table th { border-color: #21262d; }
     table tr { background-color: #0d1117; }
     table tr:nth-child(2n) { background-color: #161b22; }
